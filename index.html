@@ -7,16 +7,15 @@
     <link href="styles.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">   
-    <title>Mahit's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Quantum Computing</title>
     <script src="https://kit.fontawesome.com/27e5cf34bc.js" crossorigin="anonymous"></script>
-    <link href="https://www.mahitm.com/favicon.ico" rel="icon" />
 </head>
 <body>
 
-    <!-- ── NAVBAR (always visible) ── -->
+    <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="nav-brand">Mahit Mehta</div>
+        <div class="nav-brand">Quantum Computing</div>
         <ul>
             <li>
                 <a href="#" class="nav-link active" data-page="home">
@@ -36,31 +35,34 @@
         </ul>
     </nav>
 
-    <!-- ── PAGE: HOME ── -->
+    <!-- PAGE: HOME -->
     <div class="page active" id="page-home">
         <section class="intro">
             <div class="visual">
-                <img src="./assets/react.svg" />
+                <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" class="quantum-svg">
+                    <!-- Outer orbit ring -->
+                    <ellipse cx="150" cy="150" rx="130" ry="45" fill="none" stroke="#7738EC" stroke-width="2" opacity="0.7" transform="rotate(-30 150 150)"/>
+                    <ellipse cx="150" cy="150" rx="130" ry="45" fill="none" stroke="#7738EC" stroke-width="2" opacity="0.5" transform="rotate(30 150 150)"/>
+                    <ellipse cx="150" cy="150" rx="130" ry="45" fill="none" stroke="#7738EC" stroke-width="2" opacity="0.3" transform="rotate(90 150 150)"/>
+                    <!-- Center nucleus -->
+                    <circle cx="150" cy="150" r="22" fill="#7738EC" opacity="0.9"/>
+                    <circle cx="150" cy="150" r="14" fill="#a56eff"/>
+                    <!-- Electron dots -->
+                    <circle cx="280" cy="150" r="6" fill="#ffffff" opacity="0.9"/>
+                    <circle cx="63"  cy="97"  r="6" fill="#ffffff" opacity="0.9"/>
+                    <circle cx="63"  cy="203" r="6" fill="#ffffff" opacity="0.9"/>
+                    <!-- Qubit label -->
+                    <text x="150" y="155" text-anchor="middle" fill="white" font-size="11" font-family="Source Sans Pro, sans-serif" font-weight="700">|ψ⟩</text>
+                </svg>
             </div>
             <div class="headings">
-                <h1>I'm Mahit Mehta. A Web Architect <span style="color:var(--accent)">Based in USA</span>.</h1>
-                <h2>I'm probably the most passionate developer you will ever get to work with. If you have a great project that needs some amazing skills, I'm your guy.</h2>
-                <div class="socials">
-                    <a href="https://www.github.com/mahitmehta" target="_blank" rel="noreferrer noopener">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/mahitm" target="_blank" rel="noreferrer noopener">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:contact@mahitm.com" target="_blank" rel="noreferrer noopener">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
-                </div>
+                <h1>Quantum Computing</h1>
+                <h2>Created By Enoch Ajewole and Armaan Singh</h2>
             </div>
         </section>
     </div>
 
-    <!-- ── PAGE 2 (placeholder) ── -->
+    <!-- PAGE 2 -->
     <div class="page" id="page-page2">
         <section class="placeholder-page">
             <h1>Page 2</h1>
@@ -68,7 +70,7 @@
         </section>
     </div>
 
-    <!-- ── PAGE 3 (placeholder) ── -->
+    <!-- PAGE 3 -->
     <div class="page" id="page-page3">
         <section class="placeholder-page">
             <h1>Page 3</h1>
