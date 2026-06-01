@@ -13,41 +13,69 @@
     <link href="https://www.mahitm.com/favicon.ico" rel="icon" />
 </head>
 <body>
+
+    <!-- ── NAVBAR (always visible) ── -->
     <nav class="navbar">
+        <div class="nav-brand">Mahit Mehta</div>
         <ul>
             <li>
-                <i class="fa-solid fa-house-chimney"></i>
-                <a href="#intro">Home</a>
+                <a href="#" class="nav-link active" data-page="home">
+                    <i class="fa-solid fa-house-chimney"></i> Home
+                </a>
             </li>
             <li>
-                <i class="fa-solid fa-clock"></i>
-                <a href="#experiences">Experiences</a>
+                <a href="#" class="nav-link" data-page="page2">
+                    <i class="fa-solid fa-star"></i> Page 2
+                </a>
             </li>
-            <li class="bg-accent">
-                <i class="fa-solid fa-phone"></i>
-                <a href="#contact">Contact</a>
+            <li>
+                <a href="#" class="nav-link" data-page="page3">
+                    <i class="fa-solid fa-bolt"></i> Page 3
+                </a>
             </li>
         </ul>
     </nav>
-    <section id="intro" class="intro">
-        <div class="visual">
-            <img src="./assets/react.svg" />
-        </div>
-        <div class="headings">
-            <h1>I'm Mahit Mehta. A Web Architect <span style="color:var(--accent)">Based in USA</span>.</h1>
-            <h2>I’m probably the most passionate developer you will ever get to work with. If you have a great project that needs some amazing skills, I’m your guy.</h2>
-            <div class="socials">
-                <a href="https://www.github.com/mahitmehta" target="_blank" rel="noreferrer noopener">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/mahitm" target="_blank" rel="noreferrer noopener">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="mailto:contact@mahitm.com" target="_blank" rel="noreferrer noopener">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
+
+    <!-- ── PAGE: HOME ── -->
+    <div class="page active" id="page-home">
+        <section class="intro">
+            <div class="visual">
+                <img src="./assets/react.svg" />
             </div>
-        </div>
-    </section>
+            <div class="headings">
+                <h1>I'm Mahit Mehta. A Web Architect <span style="color:var(--accent)">Based in USA</span>.</h1>
+                <h2>I'm probably the most passionate developer you will ever get to work with. If you have a great project that needs some amazing skills, I'm your guy.</h2>
+                <div class="socials">
+                    <a href="https://www.github.com/mahitmehta" target="_blank" rel="noreferrer noopener">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mahitm" target="_blank" rel="noreferrer noopener">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:contact@mahitm.com" target="_blank" rel="noreferrer noopener">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ── PAGE 2 (placeholder) ── -->
+    <div class="page" id="page-page2">
+        <section class="placeholder-page">
+            <h1>Page 2</h1>
+            <p>Content coming soon.</p>
+        </section>
+    </div>
+
+    <!-- ── PAGE 3 (placeholder) ── -->
+    <div class="page" id="page-page3">
+        <section class="placeholder-page">
+            <h1>Page 3</h1>
+            <p>Content coming soon.</p>
+        </section>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
