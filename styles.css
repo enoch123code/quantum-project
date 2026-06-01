@@ -17,49 +17,92 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 2000px;
+    min-height: 100vh;
 }
 
+/* ── NAVBAR ── */
 .navbar {
     position: fixed;
-    top: 25px; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0 32px;
+    height: 64px;
+    background-color: rgba(17, 17, 17, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.nav-brand {
+    color: white;
+    font-family: "Libre Baskerville", serif;
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-right: 8px;
 }
 
 .navbar ul {
-    display: flex; 
-    background-color: rgba(0,0,0,0.5);
-    box-shadow: 0px 0px 10px 0px #000;
-    padding: 2px;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-}
-
-.navbar ul li {
+    display: flex;
     list-style: none;
-    padding: 25px 15px; 
+    gap: 4px;
 }
 
-.bg-accent {
-    background-color: var(--accent)
-}
-
-.navbar ul li i {
-    color: white; 
-}
-
-.navbar ul li a {
+.navbar ul li a.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 7px;
     text-decoration: none;
-    color: white; 
-    margin: 0px 5px;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 200ms ease;
+    letter-spacing: 0.03em;
 }
 
+.navbar ul li a.nav-link i {
+    font-size: 13px;
+}
+
+.navbar ul li a.nav-link:hover {
+    color: white;
+    background: rgba(255,255,255,0.08);
+}
+
+.navbar ul li a.nav-link.active {
+    color: white;
+    background: var(--accent);
+}
+
+/* ── PAGES ── */
+.page {
+    display: none;
+    width: 100%;
+    padding-top: 64px; /* navbar height */
+    min-height: 100vh;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ── HOME PAGE ── */
 .intro {
     max-width: 1500px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 750px;
+    height: calc(100vh - 64px);
     width: 100vw;
+    margin: 0 auto;
 }
 
 .visual {
@@ -97,7 +140,7 @@ body {
     width: 100%;
     padding: 10px 0px; 
     display: flex;
-    gap: 25px
+    gap: 25px;
 }
 
 .socials i {
@@ -110,10 +153,34 @@ body {
     color: var(--accent); 
 }
 
+/* ── PLACEHOLDER PAGES ── */
+.placeholder-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 64px);
+    gap: 16px;
+    color: white;
+}
+
+.placeholder-page h1 {
+    font-size: 48px;
+    font-family: "Libre Baskerville", serif;
+    color: var(--accent);
+}
+
+.placeholder-page p {
+    color: rgba(255,255,255,0.4);
+    font-size: 18px;
+}
+
+/* ── RESPONSIVE ── */
 @media all and (max-width: 850px) {
     .intro {
-        margin-top: 100px;
         flex-direction: column;
+        height: auto;
+        padding: 40px 0;
     }
 
     .visual img {
@@ -122,6 +189,10 @@ body {
 
     .headings {
         max-width: initial;
+    }
+
+    .nav-brand {
+        display: none;
     }
 }
 
