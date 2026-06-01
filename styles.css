@@ -6,9 +6,9 @@
 }
 
 :root {
-    --accent: #7738EC; 
+    --accent: #7738EC;
     --background-primary: #111111;
-    --background-secondary: #27242D; 
+    --background-secondary: #27242D;
 }
 
 body {
@@ -20,7 +20,7 @@ body {
     min-height: 100vh;
 }
 
-/* ── NAVBAR ── */
+/* NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
@@ -32,7 +32,7 @@ body {
     gap: 24px;
     padding: 0 32px;
     height: 64px;
-    background-color: rgba(17, 17, 17, 0.85);
+    background-color: rgba(17, 17, 17, 0.9);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255,255,255,0.07);
@@ -82,11 +82,11 @@ body {
     background: var(--accent);
 }
 
-/* ── PAGES ── */
+/* PAGES */
 .page {
     display: none;
     width: 100%;
-    padding-top: 64px; /* navbar height */
+    padding-top: 64px;
     min-height: 100vh;
 }
 
@@ -94,7 +94,7 @@ body {
     display: block;
 }
 
-/* ── HOME PAGE ── */
+/* HOME PAGE */
 .intro {
     max-width: 1500px;
     display: flex;
@@ -106,17 +106,22 @@ body {
 }
 
 .visual {
-    padding: 25px; 
+    padding: 25px;
     display: flex;
     justify-content: center;
-    width: 100%;    
+    width: 100%;
+}
+
+.quantum-svg {
+    width: 260px;
+    height: 260px;
 }
 
 .headings {
     max-width: 60vw;
     background-image: linear-gradient(45deg, var(--background-secondary), var(--background-primary));
     height: 100%;
-    padding: 0px 50px; 
+    padding: 0px 50px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -125,35 +130,17 @@ body {
 }
 
 .headings h2 {
-    color: white; 
+    color: white;
     font-weight: 400;
     margin-top: 15px;
 }
 
 .headings h1 {
-    color: white; 
+    color: white;
     font-size: clamp(25px, 6.5vw, 95px);
 }
 
-.socials {
-    margin-top: 25px; 
-    width: 100%;
-    padding: 10px 0px; 
-    display: flex;
-    gap: 25px;
-}
-
-.socials i {
-    transition: all 250ms ease;
-    color: white; 
-    font-size: 35px;
-}
-
-.socials a:hover i {
-    color: var(--accent); 
-}
-
-/* ── PLACEHOLDER PAGES ── */
+/* PLACEHOLDER PAGES */
 .placeholder-page {
     display: flex;
     flex-direction: column;
@@ -175,7 +162,7 @@ body {
     font-size: 18px;
 }
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media all and (max-width: 850px) {
     .intro {
         flex-direction: column;
@@ -184,7 +171,7 @@ body {
     }
 
     .visual img {
-        max-width: 500px;   
+        max-width: 500px;
     }
 
     .headings {
@@ -198,16 +185,13 @@ body {
 
 @media all and (max-width: 500px) {
     .headings {
-        padding: 0px 15px; 
-    }
-
-    .visual img {
-        max-width: calc(100vw - 25px); 
+        padding: 0px 15px;
     }
 
     .headings h1 {
         font-size: 35px;
     }
+
     .headings h2 {
         font-size: 20px;
     }
