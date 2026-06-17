@@ -5,13 +5,19 @@ body {
     color: white;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 nav {
     background-color: #7738EC;
     padding: 15px;
+    text-align: center;
 }
 
 nav h1 {
     margin: 0;
+    padding-bottom: 10px;
 }
 
 nav ul {
@@ -27,10 +33,19 @@ nav li {
 nav a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 section {
     padding: 40px;
+}
+
+h2 {
+    color: #9b72ff;
 }
 
 .card {
@@ -46,7 +61,8 @@ table {
     margin-top: 20px;
 }
 
-th, td {
+th,
+td {
     border: 1px solid white;
     padding: 10px;
     text-align: center;
@@ -54,6 +70,13 @@ th, td {
 
 th {
     background-color: #7738EC;
+}
+
+pre {
+    background-color: #000;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
 }
 
 footer {
