@@ -2,221 +2,419 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Computing Simulator</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>Quantum Computing</title>
+    <script src="https://kit.fontawesome.com/27e5cf34bc.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-<nav>
-    <h1>Quantum Computing Simulator</h1>
-
-    <ul>
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#concepts">Concepts</a></li>
-        <li><a href="#dj">Deutsch-Jozsa</a></li>
-        <li><a href="#bv">Bernstein-Vazirani</a></li>
-        <li><a href="#results">Results</a></li>
-    </ul>
-</nav>
-
-<section id="overview">
-    <h2>Project Overview</h2>
-
-    <div class="card">
-        <p>
-            This project is a Java-based quantum computing simulator
-            that demonstrates quantum computing fundamentals through
-            implementations of the Deutsch-Jozsa and Bernstein-Vazirani
-            algorithms.
-        </p>
-
-        <h3>Features</h3>
-
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">Quantum Computing</div>
         <ul>
-            <li>Complex Number Arithmetic</li>
-            <li>Quantum State Simulation</li>
-            <li>Hadamard Gate Implementation</li>
-            <li>Oracle Functions</li>
-            <li>Quantum Measurement</li>
-            <li>Deutsch-Jozsa Algorithm</li>
-            <li>Bernstein-Vazirani Algorithm</li>
-            <li>Statistical Testing</li>
+            <li>
+                <a href="#" class="nav-link active" data-page="home">
+                    <i class="fa-solid fa-house-chimney"></i> Home
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link" data-page="page2">
+                    <i class="fa-solid fa-atom"></i> The Algorithms
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link" data-page="page3">
+                    <i class="fa-solid fa-terminal"></i> The Simulator
+                </a>
+            </li>
         </ul>
+    </nav>
+
+    <!-- PAGE: HOME -->
+    <div class="page active" id="page-home">
+        <section class="intro">
+            <div class="visual">
+                <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" class="quantum-svg">
+                    <ellipse cx="150" cy="150" rx="130" ry="45" fill="none" stroke="#7738EC" stroke-width="2" opacity="0.7" transform="rotate(-30 150 150)"/>
+                    <ellipse cx="150" cy="150" rx="130" ry="45" fill="none" stroke="#7738EC" stroke-width="2" opacity="0.5" transform="rotate(30 150 150)"/>
+                    <ellipse cx="150" cy="150" rx="130" ry="45" fill="none" stroke="#7738EC" stroke-width="2" opacity="0.3" transform="rotate(90 150 150)"/>
+                    <circle cx="150" cy="150" r="22" fill="#7738EC" opacity="0.9"/>
+                    <circle cx="150" cy="150" r="14" fill="#a56eff"/>
+                    <circle cx="280" cy="150" r="6" fill="#ffffff" opacity="0.9"/>
+                    <circle cx="63"  cy="97"  r="6" fill="#ffffff" opacity="0.9"/>
+                    <circle cx="63"  cy="203" r="6" fill="#ffffff" opacity="0.9"/>
+                    <text x="150" y="155" text-anchor="middle" fill="white" font-size="11" font-family="Source Sans Pro, sans-serif" font-weight="700">|ψ⟩</text>
+                </svg>
+            </div>
+            <div class="headings">
+                <p class="eyebrow">CS Project — Enoch Ajewole & Armaan Singh</p>
+                <h1>Quantum Computing</h1>
+                <h2>A Java simulator demonstrating quantum advantage through the Deutsch-Jozsa and Bernstein-Vazirani algorithms.</h2>
+                <div class="home-stats">
+                    <div class="stat">
+                        <span class="stat-num">1</span>
+                        <span class="stat-label">Oracle query<br>vs 513 classical</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-label">Accuracy across<br>1000 test runs</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">2</span>
+                        <span class="stat-label">Quantum algorithms<br>implemented</span>
+                    </div>
+                </div>
+                <div class="home-buttons">
+                    <button class="btn-primary" onclick="goToPage('page2')">Explore the Algorithms</button>
+                    <button class="btn-secondary" onclick="goToPage('page3')">View the Simulator</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="what-is">
+            <div class="what-is-inner">
+                <h3>What is Quantum Computing?</h3>
+                <div class="what-is-grid">
+                    <div class="concept-card">
+                        <div class="concept-icon">⚛️</div>
+                        <h4>Qubits</h4>
+                        <p>Classical computers use bits that are either 0 or 1. Quantum computers use qubits, which can be <strong>both 0 and 1 at the same time</strong> — a property called superposition.</p>
+                    </div>
+                    <div class="concept-card">
+                        <div class="concept-icon">🌊</div>
+                        <h4>Interference</h4>
+                        <p>Like waves in water, quantum amplitudes can add together or cancel out. Quantum algorithms are designed so that <strong>wrong answers cancel</strong> and right answers amplify.</p>
+                    </div>
+                    <div class="concept-card">
+                        <div class="concept-icon">📏</div>
+                        <h4>Measurement</h4>
+                        <p>When you measure a qubit, superposition collapses to a definite 0 or 1. The trick is to <strong>arrange interference first</strong> so the right answer is most probable.</p>
+                    </div>
+                    <div class="concept-card">
+                        <div class="concept-icon">⚡</div>
+                        <h4>Quantum Advantage</h4>
+                        <p>For certain problems, quantum computers can find answers in <strong>exponentially fewer steps</strong> than the best classical algorithms — that's the advantage we demonstrate here.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-</section>
 
-<section id="concepts">
-    <h2>Quantum Concepts</h2>
+    <!-- PAGE 2: THE ALGORITHMS -->
+    <div class="page" id="page-page2">
+        <div class="page-content">
+            <div class="page-header">
+                <p class="eyebrow">What we built</p>
+                <h1>The Algorithms</h1>
+                <p class="page-subtitle">Two quantum algorithms that dramatically outperform their classical counterparts — both implemented from scratch in Java.</p>
+            </div>
 
-    <div class="card">
+            <!-- DEUTSCH-JOZSA -->
+            <section class="algo-section">
+                <div class="algo-header">
+                    <div class="algo-badge">Algorithm 01</div>
+                    <h2>Deutsch-Jozsa</h2>
+                </div>
+                <div class="algo-body">
+                    <div class="algo-problem">
+                        <h3>The Problem</h3>
+                        <p>You're given a mystery function f that takes a binary input and outputs 0 or 1. The function is <em>guaranteed</em> to be one of two types:</p>
+                        <ul>
+                            <li><strong>Constant</strong> — outputs the same value (all 0s or all 1s) no matter what you put in</li>
+                            <li><strong>Balanced</strong> — outputs 0 for exactly half of inputs and 1 for the other half</li>
+                        </ul>
+                        <p>Your job: figure out which type it is.</p>
+                    </div>
+                    <div class="algo-comparison">
+                        <div class="comparison-card classical">
+                            <div class="comp-label">Classical</div>
+                            <div class="comp-num">513</div>
+                            <div class="comp-desc">queries needed in the worst case for a 10-bit input (2<sup>n-1</sup> + 1)</div>
+                        </div>
+                        <div class="vs-label">VS</div>
+                        <div class="comparison-card quantum">
+                            <div class="comp-label">Quantum</div>
+                            <div class="comp-num">1</div>
+                            <div class="comp-desc">query. Always. No matter how big the input is.</div>
+                        </div>
+                    </div>
+                    <div class="algo-steps">
+                        <h3>How it works — step by step</h3>
+                        <div class="steps-grid">
+                            <div class="step">
+                                <div class="step-num">1</div>
+                                <div class="step-text"><strong>Initialize</strong> — Start all qubits in state |0⟩</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-num">2</div>
+                                <div class="step-text"><strong>Superposition</strong> — Apply Hadamard gates to create an equal mix of all possible inputs at once</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-num">3</div>
+                                <div class="step-text"><strong>Oracle query</strong> — Run the mystery function once. It flips the phase (sign) of states where f(x) = 1</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-num">4</div>
+                                <div class="step-text"><strong>Interference</strong> — Apply Hadamard again. Constant functions interfere constructively at |00⟩, balanced functions don't</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-num">5</div>
+                                <div class="step-text"><strong>Measure</strong> — If you measure |00...0⟩, the function is constant. Anything else means balanced.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="algo-output">
+                        <h3>Actual simulator output</h3>
+                        <pre class="code-output">Step 1: Initialize to |0⟩²
+  |00⟩: 1.0000  (probability: 1.0000)
 
-        <h3>Qubits</h3>
+Step 2: Apply Hadamard — superposition of all inputs
+  |00⟩: 0.5000  |01⟩: 0.5000  |10⟩: 0.5000  |11⟩: 0.5000
 
-        <p>
-            Classical computers use bits that are either 0 or 1.
-            Quantum computers use qubits.
-        </p>
+Step 3: Apply oracle (ONE QUERY)
+  [balanced fn] |00⟩: +0.5000  |01⟩: +0.5000  |10⟩: -0.5000  |11⟩: -0.5000
+  ↑ phase flips on states where f(x) = 1
 
-        <pre>
-α|0⟩ + β|1⟩
-        </pre>
+Step 4: Apply Hadamard again — interference
+  |10⟩: 1.0000  (probability: 1.0000)
+  ↑ did NOT collapse to |00⟩ → BALANCED ✓
 
-        <h3>Superposition</h3>
+Statistical test: 1000/1000 runs correct (100% accuracy)</pre>
+                    </div>
+                </div>
+            </section>
 
-        <p>
-            A qubit can represent multiple possibilities simultaneously.
-        </p>
+            <!-- BERNSTEIN-VAZIRANI -->
+            <section class="algo-section">
+                <div class="algo-header">
+                    <div class="algo-badge">Algorithm 02</div>
+                    <h2>Bernstein-Vazirani</h2>
+                </div>
+                <div class="algo-body">
+                    <div class="algo-problem">
+                        <h3>The Problem</h3>
+                        <p>There's a hidden secret bit string <strong>s</strong>. You have access to an oracle that computes:</p>
+                        <div class="formula">f(x) = s · x (mod 2)</div>
+                        <p>This is the bitwise dot product — for each bit position, multiply the corresponding bits of s and x, then XOR everything together. Your job: find the entire secret string <strong>s</strong>.</p>
+                    </div>
+                    <div class="algo-comparison">
+                        <div class="comparison-card classical">
+                            <div class="comp-label">Classical</div>
+                            <div class="comp-num">n</div>
+                            <div class="comp-desc">queries needed — one carefully chosen query per bit of the secret</div>
+                        </div>
+                        <div class="vs-label">VS</div>
+                        <div class="comparison-card quantum">
+                            <div class="comp-label">Quantum</div>
+                            <div class="comp-num">1</div>
+                            <div class="comp-desc">query recovers the entire secret string, no matter how long it is</div>
+                        </div>
+                    </div>
+                    <div class="algo-steps">
+                        <h3>How it works — step by step</h3>
+                        <div class="steps-grid">
+                            <div class="step">
+                                <div class="step-num">1</div>
+                                <div class="step-text"><strong>Initialize</strong> — Start all qubits in state |0⟩</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-num">2</div>
+                                <div class="step-text"><strong>Superposition</strong> — Hadamard gates create a uniform superposition of all possible inputs</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-num">3</div>
+                                <div class="step-text"><strong>Oracle query</strong> — The oracle computes the dot product in superposition, encoding the secret as phase flips</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-num">4</div>
+                                <div class="step-text"><strong>Interference</strong> — A second round of Hadamard gates transforms the phase information back into amplitude</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-num">5</div>
+                                <div class="step-text"><strong>Measure</strong> — The measurement result <em>is</em> the secret string. Directly.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="algo-output">
+                        <h3>Actual simulator output — recovering secret "101"</h3>
+                        <pre class="code-output">Step 2: Superposition of all 3-qubit inputs
+  |000⟩: 0.3536  |001⟩: 0.3536  |010⟩: 0.3536  |011⟩: 0.3536
+  |100⟩: 0.3536  |101⟩: 0.3536  |110⟩: 0.3536  |111⟩: 0.3536
 
-        <h3>Interference</h3>
+Step 3: Oracle applies phase flips based on s · x
+  |000⟩: +0.3536  |001⟩: -0.3536  |010⟩: +0.3536  |011⟩: -0.3536
+  |100⟩: -0.3536  |101⟩: +0.3536  |110⟩: -0.3536  |111⟩: +0.3536
 
-        <p>
-            Quantum amplitudes can reinforce or cancel one another.
-            This is what gives many quantum algorithms their power.
-        </p>
+Step 4: Hadamard — interference collapses everything
+  |101⟩: 1.0000  (probability: 1.0000)
+  ↑ measurement gives us exactly the secret ✓
 
-        <h3>Measurement</h3>
-
-        <p>
-            Measurement collapses a quantum state into one definite outcome.
-        </p>
-
+Recovery rate across 1000 runs: 100.0%</pre>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
-</section>
 
-<section id="dj">
-    <h2>Deutsch-Jozsa Algorithm</h2>
+    <!-- PAGE 3: THE SIMULATOR -->
+    <div class="page" id="page-page3">
+        <div class="page-content">
+            <div class="page-header">
+                <p class="eyebrow">Built from scratch in Java</p>
+                <h1>The Simulator</h1>
+                <p class="page-subtitle">Every component implemented manually — no quantum libraries, no shortcuts. Here's how the code works.</p>
+            </div>
 
-    <div class="card">
+            <!-- HOW TO RUN -->
+            <section class="sim-section">
+                <h2>How to Run It</h2>
+                <div class="run-steps">
+                    <div class="run-step">
+                        <div class="run-num">1</div>
+                        <div class="run-content">
+                            <h4>Set up the file structure</h4>
+                            <p>Place all <code>.java</code> files inside a folder called <code>src/quantum/</code></p>
+                        </div>
+                    </div>
+                    <div class="run-step">
+                        <div class="run-num">2</div>
+                        <div class="run-content">
+                            <h4>Compile</h4>
+                            <pre class="inline-code">javac -d bin src/quantum/*.java</pre>
+                        </div>
+                    </div>
+                    <div class="run-step">
+                        <div class="run-num">3</div>
+                        <div class="run-content">
+                            <h4>Run</h4>
+                            <pre class="inline-code">java -cp bin quantum.Main</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <h3>Problem</h3>
+            <!-- FILE BREAKDOWN -->
+            <section class="sim-section">
+                <h2>Project Structure</h2>
+                <div class="file-grid">
+                    <div class="file-card">
+                        <div class="file-name">Complex.java</div>
+                        <p>Represents quantum amplitudes as complex numbers. Stores real and imaginary parts, handles multiplication, and computes |amplitude|² for probability.</p>
+                        <pre class="code-snippet">Complex amp = new Complex(0.5, 0);
+double prob = amp.magnitudeSquared();
+// prob = 0.25 (25% chance)</pre>
+                    </div>
+                    <div class="file-card">
+                        <div class="file-name">QuantumState.java</div>
+                        <p>Stores an n-qubit state as an array of 2ⁿ complex amplitudes. For 2 qubits, there are 4 possible states: |00⟩, |01⟩, |10⟩, |11⟩.</p>
+                        <pre class="code-snippet">QuantumState state = new QuantumState(2);
+state.setToZero(); // starts at |00⟩
+state.print();     // shows all amplitudes</pre>
+                    </div>
+                    <div class="file-card">
+                        <div class="file-name">QuantumGate.java</div>
+                        <p>Implements the Hadamard gate (creates superposition) and the oracle (encodes the hidden function as phase flips on the quantum state).</p>
+                        <pre class="code-snippet">// Create superposition
+QuantumGate.applyHadamard(state, 0);
 
-        <p>
-            Determine whether a hidden function is Constant or Balanced.
-        </p>
+// Encode function as phase flips
+QuantumGate.applyPhaseFlip(state, oracle);</pre>
+                    </div>
+                    <div class="file-card">
+                        <div class="file-name">QuantumMeasurement.java</div>
+                        <p>Simulates measurement by building a cumulative probability distribution from the amplitudes and drawing a random outcome — just like real quantum measurement.</p>
+                        <pre class="code-snippet">int result = QuantumMeasurement.measure(state);
+// Each state |x⟩ has P = |amplitude[x]|²
+// Returns the collapsed outcome</pre>
+                    </div>
+                    <div class="file-card">
+                        <div class="file-name">DeutschJozsa.java</div>
+                        <p>Full implementation of the Deutsch-Jozsa algorithm. Takes the number of qubits and an oracle function, runs the algorithm, and returns whether the function is constant or balanced.</p>
+                        <pre class="code-snippet">QuantumGate.OracleFunction f = x -> 0; // constant
+boolean balanced = DeutschJozsa.run(2, f);
+// balanced = false ✓</pre>
+                    </div>
+                    <div class="file-card">
+                        <div class="file-name">BernsteinVazirani.java</div>
+                        <p>Full implementation of Bernstein-Vazirani. Given a dot-product oracle encoding a secret string, recovers the entire secret in a single quantum query.</p>
+                        <pre class="code-snippet">// Oracle encodes secret = 5 (binary: 101)
+int recovered = BernsteinVazirani.run(3, oracle);
+// recovered = 5 → binary "101" ✓</pre>
+                    </div>
+                </div>
+            </section>
 
-        <h3>Complexity Comparison</h3>
-
-        <table>
-            <tr>
-                <th>Method</th>
-                <th>Queries Required</th>
-            </tr>
-
-            <tr>
-                <td>Classical</td>
-                <td>2^(n−1)+1</td>
-            </tr>
-
-            <tr>
-                <td>Quantum</td>
-                <td>1</td>
-            </tr>
-        </table>
-
-        <p>
-            Our simulator correctly identifies both constant and balanced
-            functions using only a single oracle query.
-        </p>
-
+            <!-- COMPARISON TABLE -->
+            <section class="sim-section">
+                <h2>Classical vs Quantum — By the Numbers</h2>
+                <div class="comparison-table-wrap">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Problem</th>
+                                <th>Input Size (n)</th>
+                                <th class="classical-col">Classical Queries</th>
+                                <th class="quantum-col">Quantum Queries</th>
+                                <th>Speedup</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Deutsch-Jozsa</td>
+                                <td>2 bits</td>
+                                <td class="classical-col">3</td>
+                                <td class="quantum-col">1</td>
+                                <td>3×</td>
+                            </tr>
+                            <tr>
+                                <td>Deutsch-Jozsa</td>
+                                <td>5 bits</td>
+                                <td class="classical-col">17</td>
+                                <td class="quantum-col">1</td>
+                                <td>17×</td>
+                            </tr>
+                            <tr>
+                                <td>Deutsch-Jozsa</td>
+                                <td>10 bits</td>
+                                <td class="classical-col">513</td>
+                                <td class="quantum-col">1</td>
+                                <td>513×</td>
+                            </tr>
+                            <tr>
+                                <td>Bernstein-Vazirani</td>
+                                <td>2 bits</td>
+                                <td class="classical-col">2</td>
+                                <td class="quantum-col">1</td>
+                                <td>2×</td>
+                            </tr>
+                            <tr>
+                                <td>Bernstein-Vazirani</td>
+                                <td>5 bits</td>
+                                <td class="classical-col">5</td>
+                                <td class="quantum-col">1</td>
+                                <td>5×</td>
+                            </tr>
+                            <tr>
+                                <td>Bernstein-Vazirani</td>
+                                <td>10 bits</td>
+                                <td class="classical-col">10</td>
+                                <td class="quantum-col">1</td>
+                                <td>10×</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="table-note">Quantum always uses exactly 1 oracle query. Classical worst case for Deutsch-Jozsa is 2<sup>n-1</sup>+1; for Bernstein-Vazirani it's n (one query per bit).</p>
+            </section>
+        </div>
     </div>
-</section>
 
-<section id="bv">
-    <h2>Bernstein-Vazirani Algorithm</h2>
-
-    <div class="card">
-
-        <h3>Problem</h3>
-
-        <p>
-            Recover a hidden binary string.
-        </p>
-
-        <h3>Complexity Comparison</h3>
-
-        <table>
-            <tr>
-                <th>Method</th>
-                <th>Queries Required</th>
-            </tr>
-
-            <tr>
-                <td>Classical</td>
-                <td>n</td>
-            </tr>
-
-            <tr>
-                <td>Quantum</td>
-                <td>1</td>
-            </tr>
-        </table>
-
-        <h3>Example Output</h3>
-
-        <pre>
-Secret String: 101
-
-Recovered Output: 101
-
-Success ✓
-        </pre>
-
-    </div>
-</section>
-
-<section id="results">
-    <h2>Results & Testing</h2>
-
-    <div class="card">
-
-        <table>
-            <tr>
-                <th>Algorithm</th>
-                <th>Classical</th>
-                <th>Quantum</th>
-            </tr>
-
-            <tr>
-                <td>Deutsch-Jozsa</td>
-                <td>2^(n−1)+1</td>
-                <td>1</td>
-            </tr>
-
-            <tr>
-                <td>Bernstein-Vazirani</td>
-                <td>n</td>
-                <td>1</td>
-            </tr>
-        </table>
-
-        <h3>Testing Results</h3>
-
-        <ul>
-            <li>Deutsch-Jozsa: 1000/1000 correct detections</li>
-            <li>Bernstein-Vazirani: 1000/1000 successful recoveries</li>
-        </ul>
-
-        <h3>Conclusion</h3>
-
-        <p>
-            The simulator demonstrates how quantum algorithms leverage
-            superposition and interference to outperform classical
-            approaches on specific computational problems.
-        </p>
-
-    </div>
-</section>
-
-<footer>
-    <p>
-        Quantum Computing Simulator |
-        Enoch Ajewole & Armaan |
-        Computer Science Project
-    </p>
-</footer>
-
-<script src="index.js"></script>
-
+    <script src="index.js"></script>
 </body>
 </html>
