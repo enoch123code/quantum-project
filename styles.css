@@ -1,198 +1,63 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-:root {
-    --accent: #7738EC;
-    --background-primary: #111111;
-    --background-secondary: #27242D;
-}
-
 body {
-    background-color: #111111;
-    font-family: "Source Sans Pro";
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* NAVBAR */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 0 32px;
-    height: 64px;
-    background-color: rgba(17, 17, 17, 0.9);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.5);
-}
-
-.nav-brand {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #111;
     color: white;
-    font-family: "Libre Baskerville", serif;
-    font-size: 18px;
-    font-weight: 700;
-    white-space: nowrap;
-    margin-right: 8px;
 }
 
-.navbar ul {
-    display: flex;
+nav {
+    background-color: #7738EC;
+    padding: 15px;
+}
+
+nav h1 {
+    margin: 0;
+}
+
+nav ul {
     list-style: none;
-    gap: 4px;
+    padding: 0;
 }
 
-.navbar ul li a.nav-link {
-    display: flex;
-    align-items: center;
-    gap: 7px;
+nav li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav a {
+    color: white;
     text-decoration: none;
-    color: rgba(255,255,255,0.6);
-    font-size: 14px;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 6px;
-    transition: all 200ms ease;
-    letter-spacing: 0.03em;
 }
 
-.navbar ul li a.nav-link i {
-    font-size: 13px;
+section {
+    padding: 40px;
 }
 
-.navbar ul li a.nav-link:hover {
-    color: white;
-    background: rgba(255,255,255,0.08);
+.card {
+    background-color: #222;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
 }
 
-.navbar ul li a.nav-link.active {
-    color: white;
-    background: var(--accent);
-}
-
-/* PAGES */
-.page {
-    display: none;
+table {
     width: 100%;
-    padding-top: 64px;
-    min-height: 100vh;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.page.active {
-    display: block;
+th, td {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
 }
 
-/* HOME PAGE */
-.intro {
-    max-width: 1500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 64px);
-    width: 100vw;
-    margin: 0 auto;
+th {
+    background-color: #7738EC;
 }
 
-.visual {
-    padding: 25px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.quantum-svg {
-    width: 260px;
-    height: 260px;
-}
-
-.headings {
-    max-width: 60vw;
-    background-image: linear-gradient(45deg, var(--background-secondary), var(--background-primary));
-    height: 100%;
-    padding: 0px 50px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-}
-
-.headings h2 {
-    color: white;
-    font-weight: 400;
-    margin-top: 15px;
-}
-
-.headings h1 {
-    color: white;
-    font-size: clamp(25px, 6.5vw, 95px);
-}
-
-/* PLACEHOLDER PAGES */
-.placeholder-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 64px);
-    gap: 16px;
-    color: white;
-}
-
-.placeholder-page h1 {
-    font-size: 48px;
-    font-family: "Libre Baskerville", serif;
-    color: var(--accent);
-}
-
-.placeholder-page p {
-    color: rgba(255,255,255,0.4);
-    font-size: 18px;
-}
-
-/* RESPONSIVE */
-@media all and (max-width: 850px) {
-    .intro {
-        flex-direction: column;
-        height: auto;
-        padding: 40px 0;
-    }
-
-    .visual img {
-        max-width: 500px;
-    }
-
-    .headings {
-        max-width: initial;
-    }
-
-    .nav-brand {
-        display: none;
-    }
-}
-
-@media all and (max-width: 500px) {
-    .headings {
-        padding: 0px 15px;
-    }
-
-    .headings h1 {
-        font-size: 35px;
-    }
-
-    .headings h2 {
-        font-size: 20px;
-    }
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
 }
