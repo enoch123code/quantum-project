@@ -2,68 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <title>Quantum Computing</title>
-    <script src="https://kit.fontawesome.com/27e5cf34bc.js" crossorigin="anonymous"></script>
+    <title>Quantum Computing Project</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-brand">Quantum Computing</div>
-        <ul>
-            <li>
-                <a href="#" class="nav-link active" data-page="home">
-                    <i class="fa-solid fa-house-chimney"></i> Home
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link" data-page="page2">
-                    <i class="fa-solid fa-star"></i> Page 2
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link" data-page="page3">
-                    <i class="fa-solid fa-bolt"></i> Page 3
-                </a>
-            </li>
-        </ul>
-    </nav>
+<nav>
+    <h1>Quantum Computing</h1>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#algorithms">Algorithms</a></li>
+        <li><a href="#simulator">Simulator</a></li>
+    </ul>
+</nav>
 
-    <!-- PAGE: HOME -->
-    <div class="page active" id="page-home">
-        <section class="intro">
-            <div class="visual">
-                <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" class="quantum-svg">
-                    <ellipse cx="150" cy="150" rx="130" ry="45" fill="none" stroke="#7738EC" stroke-width="2" opacity="0.7" transform="rotate(-30 150 150)"/>
-                    <ellipse cx="150" cy="150" rx="130" ry="45" fill="none" stroke="#7738EC" stroke-width="2" opacity="0.5" transform="rotate(30 150 150)"/>
-                    <ellipse cx="150" cy="150" rx="130" ry="45" fill="none" stroke="#7738EC" stroke-width="2" opacity="0.3" transform="rotate(90 150 150)"/>
-                    <circle cx="150" cy="150" r="22" fill="#7738EC" opacity="0.9"/>
-                    <circle cx="150" cy="150" r="14" fill="#a56eff"/>
-                    <circle cx="280" cy="150" r="6" fill="#ffffff" opacity="0.9"/>
-                    <circle cx="63"  cy="97"  r="6" fill="#ffffff" opacity="0.9"/>
-                    <circle cx="63"  cy="203" r="6" fill="#ffffff" opacity="0.9"/>
-                    <text x="150" y="155" text-anchor="middle" fill="white" font-size="11" font-family="Source Sans Pro, sans-serif" font-weight="700">|ψ⟩</text>
-                </svg>
-            </div>
-            <div class="headings">
-                <h1>Quantum Computing</h1>
-                <h2>Created By Enoch Ajewole and Armaan Singh</h2>
-            </div>
-        </section>
+<section id="home">
+    <h2>Quantum Computing</h2>
+    <p>
+        Created by Enoch Ajewole and Armaan Singh.
+    </p>
+
+    <p>
+        Quantum computers use qubits instead of regular bits.
+        Unlike classical bits that are either 0 or 1, qubits can
+        exist in multiple states at the same time through
+        superposition.
+    </p>
+</section>
+
+<section id="algorithms">
+    <h2>The Algorithms</h2>
+
+    <div class="card">
+        <h3>Deutsch-Jozsa Algorithm</h3>
+        <p>
+            This algorithm determines whether a function is
+            constant or balanced.
+        </p>
+
+        <p>
+            For a 10-bit input, a classical computer may need
+            513 queries, while a quantum computer only needs 1.
+        </p>
     </div>
 
-    <!-- PAGE 2 -->
-    <div class="page" id="page-page2"></div>
+    <div class="card">
+        <h3>Bernstein-Vazirani Algorithm</h3>
+        <p>
+            This algorithm finds a hidden secret bit string.
+        </p>
 
-    <!-- PAGE 3 -->
-    <div class="page" id="page-page3"></div>
+        <p>
+            A classical computer needs one query per bit,
+            while a quantum computer can find the entire
+            secret string with only one query.
+        </p>
+    </div>
+</section>
 
-    <script src="index.js"></script>
+<section id="simulator">
+    <h2>Our Java Simulator</h2>
+
+    <p>
+        We built a quantum computing simulator in Java
+        from scratch.
+    </p>
+
+    <ul>
+        <li>Complex.java - Handles complex numbers</li>
+        <li>QuantumState.java - Stores qubit states</li>
+        <li>QuantumGate.java - Applies quantum gates</li>
+        <li>QuantumMeasurement.java - Simulates measurement</li>
+        <li>DeutschJozsa.java - Runs Deutsch-Jozsa</li>
+        <li>BernsteinVazirani.java - Runs Bernstein-Vazirani</li>
+    </ul>
+
+    <h3>Results</h3>
+
+    <table>
+        <tr>
+            <th>Algorithm</th>
+            <th>Classical Queries</th>
+            <th>Quantum Queries</th>
+        </tr>
+        <tr>
+            <td>Deutsch-Jozsa (10 bits)</td>
+            <td>513</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Bernstein-Vazirani (10 bits)</td>
+            <td>10</td>
+            <td>1</td>
+        </tr>
+    </table>
+</section>
+
+<footer>
+    <p>AP Computer Science Project - Quantum Computing Simulator</p>
+</footer>
+
 </body>
 </html>
