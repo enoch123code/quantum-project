@@ -1,53 +1,222 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quantum Computing Simulator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<nav>
     <h1>Quantum Computing Simulator</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="concepts.html">Concepts</a>
-        <a href="deutsch-jozsa.html">Deutsch-Jozsa</a>
-        <a href="bernstein-vazirani.html">Bernstein-Vazirani</a>
-        <a href="results.html">Results</a>
-    </nav>
-</header>
-
-<section>
-    <h2>Project Overview</h2>
-
-    <p>
-        This project is a Java-based quantum computing simulator that
-        demonstrates fundamental quantum concepts and two famous
-        quantum algorithms.
-    </p>
 
     <ul>
-        <li>Quantum States</li>
-        <li>Complex Amplitudes</li>
-        <li>Hadamard Gates</li>
-        <li>Quantum Measurement</li>
-        <li>Deutsch-Jozsa Algorithm</li>
-        <li>Bernstein-Vazirani Algorithm</li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#concepts">Concepts</a></li>
+        <li><a href="#dj">Deutsch-Jozsa</a></li>
+        <li><a href="#bv">Bernstein-Vazirani</a></li>
+        <li><a href="#results">Results</a></li>
     </ul>
+</nav>
+
+<section id="overview">
+    <h2>Project Overview</h2>
+
+    <div class="card">
+        <p>
+            This project is a Java-based quantum computing simulator
+            that demonstrates quantum computing fundamentals through
+            implementations of the Deutsch-Jozsa and Bernstein-Vazirani
+            algorithms.
+        </p>
+
+        <h3>Features</h3>
+
+        <ul>
+            <li>Complex Number Arithmetic</li>
+            <li>Quantum State Simulation</li>
+            <li>Hadamard Gate Implementation</li>
+            <li>Oracle Functions</li>
+            <li>Quantum Measurement</li>
+            <li>Deutsch-Jozsa Algorithm</li>
+            <li>Bernstein-Vazirani Algorithm</li>
+            <li>Statistical Testing</li>
+        </ul>
+    </div>
 </section>
 
-<section>
-    <h2>Why Quantum Computing?</h2>
+<section id="concepts">
+    <h2>Quantum Concepts</h2>
 
-    <p>
-        Quantum computers use superposition and interference to solve
-        some problems more efficiently than classical computers.
-    </p>
+    <div class="card">
+
+        <h3>Qubits</h3>
+
+        <p>
+            Classical computers use bits that are either 0 or 1.
+            Quantum computers use qubits.
+        </p>
+
+        <pre>
+α|0⟩ + β|1⟩
+        </pre>
+
+        <h3>Superposition</h3>
+
+        <p>
+            A qubit can represent multiple possibilities simultaneously.
+        </p>
+
+        <h3>Interference</h3>
+
+        <p>
+            Quantum amplitudes can reinforce or cancel one another.
+            This is what gives many quantum algorithms their power.
+        </p>
+
+        <h3>Measurement</h3>
+
+        <p>
+            Measurement collapses a quantum state into one definite outcome.
+        </p>
+
+    </div>
+</section>
+
+<section id="dj">
+    <h2>Deutsch-Jozsa Algorithm</h2>
+
+    <div class="card">
+
+        <h3>Problem</h3>
+
+        <p>
+            Determine whether a hidden function is Constant or Balanced.
+        </p>
+
+        <h3>Complexity Comparison</h3>
+
+        <table>
+            <tr>
+                <th>Method</th>
+                <th>Queries Required</th>
+            </tr>
+
+            <tr>
+                <td>Classical</td>
+                <td>2^(n−1)+1</td>
+            </tr>
+
+            <tr>
+                <td>Quantum</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+        <p>
+            Our simulator correctly identifies both constant and balanced
+            functions using only a single oracle query.
+        </p>
+
+    </div>
+</section>
+
+<section id="bv">
+    <h2>Bernstein-Vazirani Algorithm</h2>
+
+    <div class="card">
+
+        <h3>Problem</h3>
+
+        <p>
+            Recover a hidden binary string.
+        </p>
+
+        <h3>Complexity Comparison</h3>
+
+        <table>
+            <tr>
+                <th>Method</th>
+                <th>Queries Required</th>
+            </tr>
+
+            <tr>
+                <td>Classical</td>
+                <td>n</td>
+            </tr>
+
+            <tr>
+                <td>Quantum</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+        <h3>Example Output</h3>
+
+        <pre>
+Secret String: 101
+
+Recovered Output: 101
+
+Success ✓
+        </pre>
+
+    </div>
+</section>
+
+<section id="results">
+    <h2>Results & Testing</h2>
+
+    <div class="card">
+
+        <table>
+            <tr>
+                <th>Algorithm</th>
+                <th>Classical</th>
+                <th>Quantum</th>
+            </tr>
+
+            <tr>
+                <td>Deutsch-Jozsa</td>
+                <td>2^(n−1)+1</td>
+                <td>1</td>
+            </tr>
+
+            <tr>
+                <td>Bernstein-Vazirani</td>
+                <td>n</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+        <h3>Testing Results</h3>
+
+        <ul>
+            <li>Deutsch-Jozsa: 1000/1000 correct detections</li>
+            <li>Bernstein-Vazirani: 1000/1000 successful recoveries</li>
+        </ul>
+
+        <h3>Conclusion</h3>
+
+        <p>
+            The simulator demonstrates how quantum algorithms leverage
+            superposition and interference to outperform classical
+            approaches on specific computational problems.
+        </p>
+
+    </div>
 </section>
 
 <footer>
-    <p>Created by Enoch Ajewole & Armaan</p>
+    <p>
+        Quantum Computing Simulator |
+        Enoch Ajewole & Armaan |
+        Computer Science Project
+    </p>
 </footer>
+
+<script src="index.js"></script>
 
 </body>
 </html>
